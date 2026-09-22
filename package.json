@@ -1,0 +1,12 @@
+{
+  "name": "shawarma-pos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple shawarma sales and inventory POS system",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

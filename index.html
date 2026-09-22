@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b93816">
+  <title>Happy Shawarma POS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><p class="eyebrow">SALES & INVENTORY</p><h1>Happy Shawarma</h1></div>
+    <div class="header-actions"><button class="secondary" id="resetBtn">Reset demo data</button><span id="clock"></span></div>
+  </header>
+  <main class="layout">
+    <section class="content">
+      <div class="page-heading"><div><h2>Point of Sale</h2><p>Build an order, collect payment, and print a customer receipt.</p></div><div class="stat"><span>Today’s sales</span><strong id="todayTotal">₱0.00</strong></div></div>
+      <div class="tabs"><button class="tab active" data-tab="pos">Menu</button><button class="tab" data-tab="inventory">Inventory</button><button class="tab" data-tab="sales">Sales history</button></div>
+      <div id="posTab" class="tab-panel"><div class="toolbar"><input id="search" placeholder="Search menu..." aria-label="Search menu"><div id="categories" class="category-list"></div></div><div id="products" class="product-grid"></div></div>
+      <div id="inventoryTab" class="tab-panel hidden"><div class="section-title"><div><h3>Ingredient inventory</h3><p>Stock is deducted from recipes after each completed sale.</p></div><span class="badge" id="lowStockCount">0 low stock</span></div><div id="inventoryList" class="inventory-list"></div></div>
+      <div id="salesTab" class="tab-panel hidden"><div class="section-title"><div><h3>Sales history</h3><p>Recent completed orders and payment methods.</p></div></div><div id="salesList" class="sales-list"></div></div>
+    </section>
+    <aside class="order-panel"><div class="order-header"><div><p class="eyebrow">CURRENT ORDER</p><h2 id="orderNumber">Order #1001</h2></div><button class="icon-button" id="clearOrder" title="Clear order">×</button></div><div id="cart" class="cart"></div><div class="order-footer"><div class="total-row"><span>Subtotal</span><strong id="subtotal">₱0.00</strong></div><div class="total-row grand"><span>Total</span><strong id="total">₱0.00</strong></div><label class="field-label" for="payment">Payment method</label><select id="payment"><option value="Cash">Cash</option><option value="GCash">GCash</option></select><div id="cashFields"><label class="field-label" for="cashReceived">Cash received</label><input id="cashReceived" type="number" min="0" step="0.01" placeholder="₱0.00"><div class="change">Change <strong id="change">₱0.00</strong></div></div><button class="primary checkout" id="checkout">Complete sale & print receipt</button></div></aside>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
